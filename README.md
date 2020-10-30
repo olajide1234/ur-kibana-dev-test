@@ -26,11 +26,11 @@ A simple test for UR Kibana devs
   9. Edit the plugin component file (`your-path/kibana 7.9.0/plugins/my_plugin_name/public/components/app.tsx`)
     to transform the plugin into a simple single-page note taking app. 
 
-    - *The note taking app should use the Elastic EUI library ([https://elastic.github.io/eui](https://elastic.github.io/eui)).*
-    - *Notes should always have a title and text content.* 
-    - *All submitted notes should be displayed on the page in a card tile format.*
-    - *Please save notes on the Elasticsearch service and retrieve same to display on the app.* 
-    - *No need to implement authentication for Elasticsearch or Kibana
+    - The note taking app should use the Elastic EUI library ([https://elastic.github.io/eui](https://elastic.github.io/eui)).
+    - Notes should always have a title and text content. 
+    - All submitted notes should be displayed on the page in a card tile format.
+    - Please save notes on the Elasticsearch service and retrieve same to display on the app.
+    - No need to implement authentication for Elasticsearch or Kibana
 
   10. Zip your plugin file (`your-path/kibana-7.9.0/plugins/my_plugin_name`) and submit along with screenshots of the app for review.
   
