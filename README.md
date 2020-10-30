@@ -8,36 +8,31 @@ A simple test for UR Kibana devs
 
 **Detailed instructions:**  
 
- 1. Download Kibana 7.9.0 from
-    [https://github.com/elastic/kibana/releases/tag/v7.9.0](https://github.com/elastic/kibana/releases/tag/v7.9.0)
-    or
-    [https://github.com/elastic/kibana/archive/v7.9.0.zip](https://github.com/elastic/kibana/archive/v7.9.0.zip)
+ 1. Download Kibana 7.9.0 from [https://github.com/elastic/kibana/archive/v7.9.0.zip](https://github.com/elastic/kibana/archive/v7.9.0.zip)
     (425MB)
 2. Initialise the Kibana folder as a Git repository and
     commit the entire project to master, otherwise dependency install
     might fail
-3.  Spin up a new Elasticsearch service using the provided Docker-compose file (400MB). Ensure you create a new user with appropriate role access to enable Kibana connect successfully
+3.  Spin up a new Elasticsearch service using the provided Docker-compose file (762MB). Ensure you create a new user with appropriate role access to enable Kibana connect successfully
 4. Update Kibana config
     (`your-path/kibana-7.9.0/config/kibana.yml`) with the following
-    settings:   `elasticsearch.hosts : [your-elasticsearch-url]`
-    `elasticsearch.username: "your-created-username"`  
-     `elasticsearch.password:
-    "your-created-user-password"`   
+    settings:   `elasticsearch.hosts : [your-elasticsearch-url]` 
   5. Install all dependencies in Kibana with `yarn kbn bootstrap` 
   6. Bootstrap a new plugin development with `node scripts/generate_plugin my_plugin_name`.  Create plugin in default
     plugin folder (`/plugin`); make sure to select ‘Yes’ when asked to
     generate an app component and server API. Other options can be ‘No’’.   
-  7. Start Kibana with `yarn start` 
-  8. Login with your created credentials
-  9. Scroll to the bottom of left panel to see your new plugin   
-  10. Edit the plugin component file (`your-path/kibana 7.9.0/plugins/my_plugin_name/public/components/app.tsx`)
+  7. Start Kibana with `yarn start --oss` (You can skip loading sample data)
+  8. Scroll to the bottom of left panel to see your new plugin   
+  9. Edit the plugin component file (`your-path/kibana 7.9.0/plugins/my_plugin_name/public/components/app.tsx`)
     to transform the plugin into a simple single-page note taking app. 
-    *The note taking app should use the Elastic EUI library
-    ([https://elastic.github.io/eui](https://elastic.github.io/eui)).*
-    *Notes should always have a title and text content.* 
-    *All submitted notes should be displayed on the page in a card tile format.*
-	*Please save the note on the Elasticsearch service and retrieve same to display on the app.*  
-  11. Zip your plugin file (`your-path/kibana-7.9.0/plugins/my_plugin_name`) and submit along with screenshots of the app for review.
+
+    - *The note taking app should use the Elastic EUI library ([https://elastic.github.io/eui](https://elastic.github.io/eui)).*
+    - *Notes should always have a title and text content.* 
+    - *All submitted notes should be displayed on the page in a card tile format.*
+    - *Please save notes on the Elasticsearch service and retrieve same to display on the app.* 
+    - *No need to implement authentication for Elasticsearch or Kibana
+
+  10. Zip your plugin file (`your-path/kibana-7.9.0/plugins/my_plugin_name`) and submit along with screenshots of the app for review.
   
   **Bonus:**   Re-implement the note taking app in a simple ‘Create-react-app’ project and implement a maximum of 5 unit tests, preferably using React Testing Library
     ([https://testing-library.com/docs/react-testing-library/example-intro](https://testing-library.com/docs/react-testing-library/example-intro)).
