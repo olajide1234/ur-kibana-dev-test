@@ -16,7 +16,7 @@ A simple test for UR Kibana devs
 2. Initialise the Kibana folder as a Git repository and
     commit the entire project to master, otherwise dependency install
     might fail
-3.  Spin up a new Elasticsearch service using the provided Docker-compose file. Ensure you create a new user with appropriate role access to enable Kibana connect successfully
+3.  Spin up a new Elasticsearch service using the provided Docker-compose file (400MB). Ensure you create a new user with appropriate role access to enable Kibana connect successfully
 4. Update Kibana config
     (`your-path/kibana-7.9.0/config/kibana.yml`) with the following
     settings:   `elasticsearch.hosts : [your-elasticsearch-url]`
